@@ -2,7 +2,7 @@
 resource "aws_security_group" "demo-sg" {
   name        = "demo-sg"
   description = "Allow inbound HTTP, HTTPS, and SSH traffic"
-  vpc_id      = "vpc-xxxxxx" # Replace with your VPC ID
+  vpc_id      = "vpc-048339d7159381e62" # Replace with your VPC ID
 
   # Inbound rules
   ingress {
