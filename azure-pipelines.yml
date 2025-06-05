@@ -1,7 +1,8 @@
 trigger:
 - main
 
-pool: default
+pool: 
+ vmImage: 'ubuntu-latest'
 
 steps:
 
