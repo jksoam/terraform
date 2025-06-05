@@ -4,11 +4,12 @@ trigger:
 pool: default
 
 steps:
-- task: CmdLine@2
+
+- task: Bash@3
   inputs:
+    targetType: 'inline'
     script: |
-      sudo apt-get update
-      sudo apt-get install -y unzip
-- task: TerraformInstaller@1
-  inputs:
-    terraformVersion: 'latest'
+      curl -Lo tfsec https://github.com/aquasecurity/tfsec/releases/latest/download/tfsec-linux-amd64
+          chmod +x tfsec
+          sudo mv tfsec /usr/local/bin/tfsec
+          tfsec .
